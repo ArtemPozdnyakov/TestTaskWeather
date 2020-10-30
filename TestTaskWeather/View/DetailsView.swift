@@ -13,7 +13,7 @@ protocol DetailsViewProtocol: UIView {
     var tempInCity: UILabel { get set }
     var feelsLikeTempLabel: UILabel { get set }
     var tempWater: UILabel  { get set }
-    var windSpeed: UILabel { get set }
+    var pressure: UILabel { get set }
 }
 
 class DetailsViewImpl: UIView, DetailsViewProtocol {
@@ -36,7 +36,6 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
     
     internal var tempInCity: UILabel = {
         $0.font = .systemFont(ofSize: 23)
-        $0.text = "Текущая температура ..."
         $0.textColor = .white
         $0.backgroundColor = #colorLiteral(red: 0.6255869865, green: 0.6332743168, blue: 1, alpha: 1)
         $0.layer.cornerRadius = 10
@@ -52,7 +51,6 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
-        $0.text = "По ощущениям ..."
         return $0
     }(UILabel())
     
@@ -63,18 +61,16 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
-        $0.text = "Давление ..."
         return $0
     }(UILabel())
     
-    internal var windSpeed: UILabel = {
+    internal var pressure: UILabel = {
         $0.textColor = .white
         $0.backgroundColor = #colorLiteral(red: 0.6255869865, green: 0.6332743168, blue: 1, alpha: 1)
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
-        $0.text = "Скорость ветра ..."
         return $0
     }(UILabel())
     
@@ -91,7 +87,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         tempInCity.pin(to: self).below(of: weatherImage).marginTop(20).horizontally(20).height(50)
         feelsLikeTempLabel.pin(to: self).below(of: tempInCity).marginTop(20).horizontally(20).height(50)
         tempWater.pin(to: self).below(of: feelsLikeTempLabel).marginTop(20).horizontally(20).height(50)
-        windSpeed.pin(to: self).below(of: tempWater).marginTop(20).horizontally(20).height(50)
+        pressure.pin(to: self).below(of: tempWater).marginTop(20).horizontally(20).height(50)
         
     }
 }

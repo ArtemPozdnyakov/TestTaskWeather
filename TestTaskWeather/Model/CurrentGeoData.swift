@@ -45,6 +45,7 @@ struct GeoObject: Codable {
 }
 
 // MARK: - Point
+// lat and lon
 struct Point: Codable {
     let pos: String
 }

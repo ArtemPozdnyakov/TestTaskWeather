@@ -15,7 +15,5 @@ struct CurrentGeoModel {
         let poss = currentWeatherData.response.geoObjectCollection.featureMember[0].geoObject.point.pos.components(separatedBy: " ")
         lon = poss[0]
         lat = poss[1]
-        print(lat)
-        print(lon)
     }
 }

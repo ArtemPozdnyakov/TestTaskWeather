@@ -36,6 +36,7 @@ struct Info: Codable {
 }
 
 // MARK: - Tzinfo
+// Name city
 struct Tzinfo: Codable {
     let name: String
 }

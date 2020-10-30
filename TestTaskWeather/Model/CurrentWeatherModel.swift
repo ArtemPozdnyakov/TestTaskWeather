@@ -31,7 +31,6 @@ struct CurrentWeatherModel {
     init?(currentWeatherData: WelcomeWeather) {
         let name = currentWeatherData.info.tzinfo.name.components(separatedBy: "/")
         nameCity = name[1]
-        print(name[1])
         temperature = currentWeatherData.fact.temp
         feelsLikeTemperature = currentWeatherData.fact.feelsLike
         conditionCode = currentWeatherData.fact.condition

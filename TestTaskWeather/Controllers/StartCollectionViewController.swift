@@ -14,23 +14,21 @@ protocol UpdateDetailsProtocol {
 class StartCollectionViewController: UIViewController {
     
     var collectionView: UICollectionView!
-    var collCell: CityViewCell!
-    
     
     var network = NetworkWether()
-    var detailsDelegate: UpdateDetailsProtocol?
+//    var detailsDelegate: UpdateDetailsProtocol?
     
-    var item = 0
-    var answer = false
-    var city = ""
-    let cities = ["Moscow", "London", "Paris", "Tokyo", "Bangkok", "Kiev", "Madrid", "Minsk", "Rome", "Prague"]
+    var countCity = 0
+    var cancelHiddenCell = false
+    var cityForDetailsVC = ""
+    let standarCity = ["Moscow", "London", "Paris", "Tokyo", "Bangkok", "Kiev", "Madrid", "Minsk", "Rome", "Prague"]
     
     var resultCity: [CurrentWeatherModel] = [] {
         didSet {
             if resultCity.count == 10 {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
-                    self.answer = true
+                    self.cancelHiddenCell = true
                 }
             }
         }
@@ -43,17 +41,14 @@ class StartCollectionViewController: UIViewController {
         return $0
     }(UISearchBar())
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         network.geoDelegate = self
         
-        navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "Night"), for: UIBarMetrics(rawValue: 0)!)
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
-        
         setupCollectionView()
-        startWeather(city: cities, item: item)
+        setupSearchBar()
+        startLoadingWeather(city: standarCity, item: countCity)
     }
     
     func setupCollectionView() {
@@ -71,7 +66,14 @@ class StartCollectionViewController: UIViewController {
         
     }
     
-    func startWeather(city: [String], item: Int){
+    func setupSearchBar() {
+        navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "Night"), for: UIBarMetrics(rawValue: 0)!)
+        searchBar.delegate = self
+        searchBar.sizeToFit()
+        navigationItem.titleView = searchBar
+    }
+    
+    func startLoadingWeather(city: [String], item: Int){
         network.performRequestGeo(withUrlString:"https://geocode-maps.yandex.ru/1.x/?apikey=93fcd8aa-a521-479c-a5cd-5036b0c72b56&format=json&geocode=\(city[item])", varinant: 0)
     }
     
@@ -100,7 +102,7 @@ extension StartCollectionViewController: UICollectionViewDelegate, UICollectionV
             cell.backgroundColor = #colorLiteral(red: 0.5748289227, green: 0.5990194678, blue: 1, alpha: 1)
         }
         
-        if !answer {
+        if !cancelHiddenCell {
             cell.nameCity.text = "Loading..."
             cell.greayView.isHidden = true
             cell.tempInCity.isHidden = true
@@ -111,11 +113,8 @@ extension StartCollectionViewController: UICollectionViewDelegate, UICollectionV
             cell.weatherImage.isHidden = false
         }
         
-        
-        
         cell.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         cell.layer.cornerRadius = 7
-        
         cell.layer.shadowOffset = CGSize(width: 2, height: 2)
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowRadius = 5
@@ -126,7 +125,7 @@ extension StartCollectionViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if resultCity.count == 10 {
-            let vc = DetailsViewController(detailsView: DetailsViewImpl())
+            let vc = DetailsViewController(detailsView: DetailsViewImpl(), city: nil)
             vc.setupScreen(model: resultCity[indexPath.row])
             present(vc, animated: true, completion: nil)
         } else {
@@ -140,30 +139,30 @@ extension StartCollectionViewController: UICollectionViewDelegate, UICollectionV
     }
 }
 
+//Loading city in massive
 extension StartCollectionViewController: NetworkGeoDelegate {
-    func addInfo(_: NetworkWether, with currentWeather: CurrentWeatherModel) {
+    func addInfoWeather(_: NetworkWether, with currentWeather: CurrentWeatherModel) {
         resultCity.append(currentWeather)
-        item += 1
-        if item != 10 {
-            startWeather(city: cities, item: item)
+        countCity += 1
+        if countCity != 10 {
+            startLoadingWeather(city: standarCity, item: countCity)
         }
     }
 }
 
 extension StartCollectionViewController: UISearchBarDelegate {
     
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        city = searchBar.text!
+        guard let text = searchBar.text else { return }
+        cityForDetailsVC = text
     }
     
+    // Go to DetailsVC
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
-        let vc = DetailsViewController(detailsView: DetailsViewImpl())
+        let vc = DetailsViewController(detailsView: DetailsViewImpl(), city: cityForDetailsVC)
         vc.firstStart(answer: true)
-        vc.city = city
         present(vc, animated: true, completion: nil)
-        
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

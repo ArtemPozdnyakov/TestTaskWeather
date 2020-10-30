@@ -13,16 +13,13 @@ class CityViewCell: UICollectionViewCell {
     
     internal var nameCity: UILabel = {
         $0.font = .systemFont(ofSize: 18)
-        $0.text = "Архангельск"
         $0.textColor = .black
         $0.backgroundColor = #colorLiteral(red: 0.5748289227, green: 0.5990194678, blue: 1, alpha: 1)
-        
         return $0
     }(UILabel())
     
     internal var tempInCity: UILabel = {
         $0.font = .systemFont(ofSize: 18)
-        $0.text = "-12"
         $0.textColor = .black
         $0.backgroundColor = #colorLiteral(red: 0.5748289227, green: 0.5990194678, blue: 1, alpha: 1)
         
@@ -48,6 +45,7 @@ class CityViewCell: UICollectionViewCell {
         super.layoutSubviews()
         initView()
     }
+    
     
     func initView() {
         backgroundColor = #colorLiteral(red: 0.5748289227, green: 0.5990194678, blue: 1, alpha: 1)

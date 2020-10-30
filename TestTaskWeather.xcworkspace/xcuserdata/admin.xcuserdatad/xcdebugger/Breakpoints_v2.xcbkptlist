@@ -14,26 +14,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "02D15C26-6E70-406B-8BFF-20432D1FFA27"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -46,10 +30,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,16 +46,80 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "EA4A7208-7003-4115-BF0B-64EFB6BCCE3D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "parseJSONWeather(withData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E26BC30F-7736-4492-902F-C71D3657B4C8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "parseJSONWeather(withData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D215F927-6E06-4CE0-A928-D3DC51B13F27"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "parseJSONWeather(withData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "30006BEE-90BB-41D6-82FA-981D43BE6FC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "parseJSONWeather(withData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D85B67E-AB92-4B9A-B8FC-826F213DC954"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -87,7 +135,23 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "027AAD98-9120-48B8-8EAF-B7AB26C4683A"
+            uuid = "7E03E246-B46C-41E5-85EB-277899DE4170"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "parseJSONWeather(withData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "95471FEF-B237-490B-89CF-D7BF5EC13634"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -103,118 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "982DBA20-6683-42BF-9C95-165D5B0CE43F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E26BC30F-7736-4492-902F-C71D3657B4C8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D215F927-6E06-4CE0-A928-D3DC51B13F27"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "30006BEE-90BB-41D6-82FA-981D43BE6FC3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9D85B67E-AB92-4B9A-B8FC-826F213DC954"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7E03E246-B46C-41E5-85EB-277899DE4170"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "95471FEF-B237-490B-89CF-D7BF5EC13634"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "NetworkWether"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "44B4D7EF-9604-49EE-80A7-FF1B951F0B6D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -222,10 +174,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "NetworkWether"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -238,8 +190,8 @@
             filePath = "TestTaskWeather/Model/CurrentWeatherModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42">
+            startingLineNumber = "41"
+            endingLineNumber = "41">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -252,10 +204,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -268,10 +220,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -284,10 +236,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -300,10 +252,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -316,8 +268,8 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "parseJSONWeather(withData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -332,8 +284,8 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "parseJSONWeather(withData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -348,24 +300,8 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "parseJSONWeather(withData:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "36736395-C666-4FD7-83C9-0496FB1B27E3"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "parseJSONWeather(withData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -374,22 +310,6 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6827FE31-8F90-4AB3-BB71-F23B03393AA6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Controllers/DetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "updateInterface(_:with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "176E7282-D3A9-47BA-9346-DA01C512C8DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -405,7 +325,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C147C306-0B44-486F-A2F6-153B6011672A"
+            uuid = "176E7282-D3A9-47BA-9346-DA01C512C8DA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -421,7 +341,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9CF70348-03F4-4093-B0B7-859249983ACA"
+            uuid = "C147C306-0B44-486F-A2F6-153B6011672A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -437,7 +357,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED4118EF-96D0-4895-861E-84DA606E741A"
+            uuid = "9CF70348-03F4-4093-B0B7-859249983ACA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -453,6 +373,22 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "ED4118EF-96D0-4895-861E-84DA606E741A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TestTaskWeather/Controllers/DetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "updateInterface(_:with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             uuid = "3FECD908-E5D5-4A95-92E1-5FAA15C500B7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -460,8 +396,8 @@
             filePath = "TestTaskWeather/Controllers/DetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "updateInterface(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -476,8 +412,8 @@
             filePath = "TestTaskWeather/Controllers/DetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "DetailsViewController"
             landmarkType = "21">
          </BreakpointContent>
@@ -492,8 +428,8 @@
             filePath = "TestTaskWeather/Controllers/DetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "updateInterface(_:with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -508,26 +444,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "15F8DCD5-94E2-4F46-9FE6-FAB8192A7E61"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/SceneDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "scene(_:willConnectTo:options:)"
-            landmarkType = "7">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "NetworkWether"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -604,8 +524,8 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "parseJSONWeather(withData:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -620,25 +540,9 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "98F9B7A9-98AE-47B5-A085-8BC79E2279D8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
-            landmarkName = "updateInterface(_:with:)"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -760,10 +664,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -872,8 +776,8 @@
             filePath = "TestTaskWeather/View/CityViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "initView()"
             landmarkType = "7">
          </BreakpointContent>
@@ -888,9 +792,9 @@
             filePath = "TestTaskWeather/View/CityViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "initView()"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "initView(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -968,10 +872,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -984,10 +888,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1000,10 +904,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1016,10 +920,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1032,10 +936,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "NetworkGeoDelegate"
-            landmarkType = "5">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1048,26 +952,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "addInfo(_:with:)"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "performRequestWeather(lat:lon:varinant:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BC775105-C545-4246-BA1A-9173B8DA7450"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TestTaskWeather/Network/NetworkWeather.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "NetworkWetherDelegate"
-            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1080,10 +968,10 @@
             filePath = "TestTaskWeather/Network/NetworkWeather.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "performRequestGeo(withUrlString:varinant:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

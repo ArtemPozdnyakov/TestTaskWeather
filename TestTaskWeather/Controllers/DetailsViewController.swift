@@ -13,14 +13,15 @@ class DetailsViewController: UIViewController, UpdateDetailsProtocol {
     
     var network = NetworkWether()
     
-    var city = "" {
+    var city: String? {
         didSet {
             self.network.performRequestGeo(withUrlString:"https://geocode-maps.yandex.ru/1.x/?apikey=93fcd8aa-a521-479c-a5cd-5036b0c72b56&format=json&geocode=\(city)", varinant: 1)
         }
     }
     
-    init(detailsView: DetailsViewProtocol) {
+    init(detailsView: DetailsViewProtocol, city: String?) {
         self.detailsView = detailsView
+        self.city = city
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,7 +43,7 @@ class DetailsViewController: UIViewController, UpdateDetailsProtocol {
         detailsView.weatherImage.isHidden = answer
         detailsView.tempInCity.isHidden = answer
         detailsView.tempWater.isHidden = answer
-        detailsView.windSpeed.isHidden = answer
+        detailsView.pressure.isHidden = answer
         detailsView.feelsLikeTempLabel.isHidden = answer
     }
     
@@ -52,7 +53,7 @@ class DetailsViewController: UIViewController, UpdateDetailsProtocol {
             self.detailsView.weatherImage.image = UIImage(systemName: model.iconCode)
             self.detailsView.tempInCity.text = "Температура \(model.temperature) C°"
             self.detailsView.tempWater.text = "Давление \(model.pressure)%"
-            self.detailsView.windSpeed.text = "Ветер \(model.windSpeed) м/с"
+            self.detailsView.pressure.text = "Ветер \(model.windSpeed) м/с"
             self.detailsView.feelsLikeTempLabel.text = "По ощущениям \(model.feelsLikeTemperature) C°"
         }
     }
@@ -76,7 +77,7 @@ extension DetailsViewController: NetworkWetherDelegate {
             self.detailsView.weatherImage.image = UIImage(systemName: currentWeather.iconCode)
             self.detailsView.tempInCity.text = "Температура \(currentWeather.temperature) C°"
             self.detailsView.tempWater.text = "Давление \(currentWeather.pressure)%"
-            self.detailsView.windSpeed.text = "Ветер \(currentWeather.windSpeed) м/с"
+            self.detailsView.pressure.text = "Ветер \(currentWeather.windSpeed) м/с"
             self.detailsView.feelsLikeTempLabel.text = "По ощущениям \(currentWeather.feelsLikeTemperature) C°"
         }
     }

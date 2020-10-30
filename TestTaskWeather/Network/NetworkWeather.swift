@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 
 protocol NetworkGeoDelegate {
-    func addInfo(_: NetworkWether, with currentWeather: CurrentWeatherModel)
+    func addInfoWeather(_: NetworkWether, with currentWeather: CurrentWeatherModel)
 }
 
 protocol NetworkWetherDelegate {
@@ -18,18 +18,11 @@ protocol NetworkWetherDelegate {
 
 class NetworkWether {
     
-    enum RequestType {
-        case cityName(city: String)
-        case coordinate(latitude: CLLocationDegrees, longtude: CLLocationDegrees)
-    }
-    
     private let key = "cef9f267-1620-4535-9f7b-ff4018ed2a0f"
     private let keyGeo = "93fcd8aa-a521-479c-a5cd-5036b0c72b56"
     
     var weatherDelegate: NetworkWetherDelegate?
     var geoDelegate: NetworkGeoDelegate?
-    
-    var resultCity: [CurrentWeatherModel] = []
     
     func performRequestGeo(withUrlString urlString: String, varinant: Int) {
         guard let url = URL(string: urlString) else { return }
@@ -40,13 +33,12 @@ class NetworkWether {
                     self.performRequestWeather(lat: currentWeather.lat, lon: currentWeather.lon, varinant: varinant)
                 }
             }
-        }
-        task.resume()
+        }.resume()
     }
     
     func performRequestWeather(lat: String, lon: String, varinant: Int) {
         var request = URLRequest(url: URL(string: "https://api.weather.yandex.ru/v2/forecast?lat=\(lat)&lon=\(lon)&extra=true")!,timeoutInterval: Double.infinity)
-        request.addValue("cef9f267-1620-4535-9f7b-ff4018ed2a0f", forHTTPHeaderField: "X-Yandex-API-Key")
+        request.addValue(key, forHTTPHeaderField: "X-Yandex-API-Key")
         
         request.httpMethod = "GET"
         
@@ -57,14 +49,12 @@ class NetworkWether {
             }
             if let currentWeather = self.parseJSONWeather(withData: data) {
                 if varinant == 0 {
-                    self.geoDelegate?.addInfo(self, with: currentWeather)
+                    self.geoDelegate?.addInfoWeather(self, with: currentWeather)
                 } else if varinant == 1 {
                     self.weatherDelegate?.updateInterface(self, with: currentWeather )
                 }
             }
-        }
-        
-        task.resume()
+        }.resume()
     }
     
     
@@ -73,14 +63,12 @@ class NetworkWether {
     
     fileprivate func parseJSONWeather(withData data: Data) -> CurrentWeatherModel? {
         let decoder = JSONDecoder()
+        
         do {
-            
             let currentWhetherData = try decoder.decode(WelcomeWeather.self, from: data)
-            
             guard let currentWeather = CurrentWeatherModel(currentWeatherData: currentWhetherData)
             else {
                 return nil
-                
             }
             return currentWeather
         } catch let error as NSError {
@@ -91,14 +79,12 @@ class NetworkWether {
     
     fileprivate func parseJSONGeo(withData data: Data) -> CurrentGeoModel? {
         let decoder = JSONDecoder()
+        
         do {
-            
             let currentWhetherData = try decoder.decode(WelcomeGeo.self, from: data)
-            
             guard let currentWeather = CurrentGeoModel(currentWeatherData: currentWhetherData)
             else {
                 return nil
-                
             }
             return currentWeather
         } catch let error as NSError {
