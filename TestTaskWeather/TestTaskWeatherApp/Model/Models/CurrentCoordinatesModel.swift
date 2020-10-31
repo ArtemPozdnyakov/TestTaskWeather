@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct CurrentGeoModel {
+struct CurrentCoordinatesModel {
     let lat: String
     let lon: String
     
-    init?(currentWeatherData: WelcomeGeo) {
+    init?(currentWeatherData: WelcomeCoordinates) {
         let poss = currentWeatherData.response.geoObjectCollection.featureMember[0].geoObject.point.pos.components(separatedBy: " ")
         lon = poss[0]
         lat = poss[1]

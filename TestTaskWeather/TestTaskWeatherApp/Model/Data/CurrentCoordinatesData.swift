@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct WelcomeGeo: Codable {
+struct WelcomeCoordinates: Codable {
     let response: Response
 }
 

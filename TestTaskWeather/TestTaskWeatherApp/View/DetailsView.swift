@@ -14,13 +14,16 @@ protocol DetailsViewProtocol: UIView {
     var feelsLikeTempLabel: UILabel { get set }
     var tempWater: UILabel  { get set }
     var pressure: UILabel { get set }
+    
+    func isHiddenView(isHidden: Bool)
+    func updateView(model: CurrentWeatherModel)
 }
 
 class DetailsViewImpl: UIView, DetailsViewProtocol {
     
     internal var nameCity: UILabel = {
         $0.font = .systemFont(ofSize: 30)
-        $0.text = "..."
+        $0.text = "Loading..."
         $0.textColor = .white
         $0.textAlignment = .center
         return $0
@@ -31,6 +34,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.tintColor = #colorLiteral(red: 0.8279205561, green: 0.7523292899, blue: 1, alpha: 1)
         $0.backgroundColor = .clear
         $0.contentMode = .scaleAspectFit
+        $0.isHidden = true
         return $0
     }(UIImageView())
     
@@ -41,6 +45,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
         $0.textAlignment = .center
+        $0.isHidden = true
         return $0
     }(UILabel())
     
@@ -51,6 +56,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
+        $0.isHidden = true
         return $0
     }(UILabel())
     
@@ -61,6 +67,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
+        $0.isHidden = true
         return $0
     }(UILabel())
     
@@ -71,6 +78,7 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         $0.clipsToBounds = true
         $0.textAlignment = .center
         $0.font = .systemFont(ofSize: 23)
+        $0.isHidden = true
         return $0
     }(UILabel())
     
@@ -87,7 +95,26 @@ class DetailsViewImpl: UIView, DetailsViewProtocol {
         tempInCity.pin(to: self).below(of: weatherImage).marginTop(20).horizontally(20).height(50)
         feelsLikeTempLabel.pin(to: self).below(of: tempInCity).marginTop(20).horizontally(20).height(50)
         tempWater.pin(to: self).below(of: feelsLikeTempLabel).marginTop(20).horizontally(20).height(50)
-        pressure.pin(to: self).below(of: tempWater).marginTop(20).horizontally(20).height(50)
-        
+        pressure.pin(to: self).below(of: tempWater).marginTop(20).horizontally(20).height(50)        
+    }
+    
+    func isHiddenView(isHidden: Bool) {
+        nameCity.text = "Loading..."
+        weatherImage.isHidden = isHidden
+        tempInCity.isHidden = isHidden
+        tempWater.isHidden = isHidden
+        pressure.isHidden = isHidden
+        feelsLikeTempLabel.isHidden = isHidden
+    }
+    
+    func updateView(model: CurrentWeatherModel) {
+        DispatchQueue.main.async {
+            self.nameCity.text = model.nameCity
+            self.weatherImage.image = UIImage(systemName: model.iconCode)
+            self.tempInCity.text = "Температура \(model.temperature) C°"
+            self.tempWater.text = "Давление \(model.pressure)%"
+            self.pressure.text = "Ветер \(model.windSpeed) м/с"
+            self.feelsLikeTempLabel.text = "По ощущениям \(model.feelsLikeTemperature) C°"
+        }
     }
 }
