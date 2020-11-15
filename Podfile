@@ -6,6 +6,8 @@ target 'TestTaskWeather' do
   use_frameworks!
 
 pod 'PinLayout'
+pod 'RxSwift'
+pod 'RxCocoa'
 
   # Pods for TestTaskWeather
 

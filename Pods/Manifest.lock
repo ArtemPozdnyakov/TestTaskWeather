@@ -1,16 +1,30 @@
 PODS:
   - PinLayout (1.9.2)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
 
 DEPENDENCIES:
   - PinLayout
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
     - PinLayout
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 SPEC CHECKSUMS:
   PinLayout: 0d96022e46e8b80468d819f182a393b97ca038da
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: a8c3eca67dac90ea9941a63ff8f6b8a64325ef2e
+PODFILE CHECKSUM: 897b17947fbea85e69fa8416971a7351266bd824
 
 COCOAPODS: 1.9.0.beta.3

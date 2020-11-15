@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol UpdateDetailsProtocol {
     func setupScreen(model: CurrentWeatherModel)
@@ -13,114 +15,68 @@ protocol UpdateDetailsProtocol {
 
 class StartCollectionViewController: UIViewController {
     
-    var collectionView: UICollectionView!
-    var network = NetworkWether()
-    private var searchBar = UISearchBar()
     
+    
+    private let startView: StartViewProtocol?
+    private var network: Networking
+    
+    init(startView: StartViewProtocol, network: Networking = NetworkWether()) {
+        self.startView = startView
+        self.network = network
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        view = startView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        network.geoDelegate = self
-        
-        setupCollectionView()
-        setupSearchBar()
-        startLoadingWeather(city: network.standarCity)
+        startView?.setupSearchBar(nc: self.navigationController, ni: navigationItem)
+        network.countRequest = 0
+        citiFinish()
+        didSelectCell()
+        searchSubject()
     }
     
-    func setupCollectionView() {
-        collectionView =  UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView.backgroundColor = #colorLiteral(red: 0.4165681005, green: 0.3878802657, blue: 0.7815238833, alpha: 1)
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 300, right: 0)
-        let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
-        layout?.minimumLineSpacing = 10
-        view.addSubview(collectionView)
-        collectionView.register(CityViewCell.self, forCellWithReuseIdentifier: "cell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-    
-    func setupSearchBar() {
-        navigationController?.navigationBar.setBackgroundImage(#imageLiteral(resourceName: "Night"), for: UIBarMetrics(rawValue: 0)!)
-        searchBar.tintColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-        searchBar.placeholder = "Enter city..."
-        searchBar.showsCancelButton = true
-        searchBar.delegate = self
-        searchBar.sizeToFit()
-        navigationItem.titleView = searchBar
-    }
-    
-    func startLoadingWeather(city: [String]){
-        network.performRequestCoordinates(city: network.standarCity[network.resultCity.count], varinant: 0)
-    }
-}
-
-
-//MARK: - Extension
-extension StartCollectionViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 30, height: 65)
-    }
-}
-
-//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension StartCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CityViewCell
-        
-        if network.resultCity.count != 0 {
-            cell.updateCell(model: network.resultCity[indexPath.row])
-            cell.isHiddenView(isHidden: false)
-        } else {
-            cell.isHiddenView(isHidden: true)
-        }
-
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if network.resultCity.count == 10 {
-            let vc = DetailsViewController(detailsView: DetailsViewImpl())
-            vc.setupScreen(model: network.resultCity[indexPath.row])
-            present(vc, animated: true, completion: nil)
-        } else {
+    func searchSubject() {
+        startView?.searchSubject.subscribe({ city in
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Loading...", message: "Please wait.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                self.present(alert, animated: true)
+                let vc = DetailsViewController(detailsView: DetailsViewImpl())
+                vc.detailCity(city: city.element!)
+                self.present(vc, animated: true, completion: nil)
             }
+        })
+    }
+    
+    func citiFinish() {
+        network.cityFinish.subscribe { city in
+            self.startView?.array.append(city)
+        } onError: { error in
+            print(error)
+        } onCompleted: {
+            print("complited")
+        } onDisposed: {
+            print("dispised")
         }
     }
-}
-
-//MARK: - NetworkGeoDelegate
-//Loading city in massive
-extension StartCollectionViewController: NetworkGeoDelegate {
-    func addInfoWeather(with currentWeather: [CurrentWeatherModel]) {
-        collectionView.reloadData()
-    }
-}
-
-//MARK: - UISearchBarDelegate
-extension StartCollectionViewController: UISearchBarDelegate {
     
-    // Go to DetailsVC
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.endEditing(true)
-        let vc = DetailsViewController(detailsView: DetailsViewImpl())
-        guard let textCity = searchBar.text else { return }
-        vc.city = textCity
-        present(vc, animated: true, completion: nil)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBar.endEditing(true)
+    func didSelectCell() {
+        startView?.didSelectCell.subscribe(onNext: { indexPath in
+                let vc = DetailsViewController(detailsView: DetailsViewImpl())
+                vc.setupScreen(model: (self.startView?.array[indexPath.row])!)
+                self.present(vc, animated: true, completion: nil)
+        }, onError: { error in
+            print(error)
+        }, onCompleted: {
+            print("complited")
+        }, onDisposed: {
+            print("dispised")
+        })
     }
 }
-
 

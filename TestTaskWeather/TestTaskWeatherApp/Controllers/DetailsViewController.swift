@@ -7,20 +7,14 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController, UpdateDetailsProtocol {
+class DetailsViewController: UIViewController {
     
     private let detailsView: DetailsViewProtocol
+    private var network: Networking
     
-    var network = NetworkWether()
-    
-    var city = "" {
-        didSet {
-            self.network.performRequestCoordinates(city: city, varinant: 1)
-        }
-    }
-    
-    init(detailsView: DetailsViewProtocol) {
+    init(detailsView: DetailsViewProtocol, network: Networking = NetworkWether()) {
         self.detailsView = detailsView
+        self.network = network
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,12 +28,20 @@ class DetailsViewController: UIViewController, UpdateDetailsProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        network.weatherDelegate = self
+        network.detailCity.subscribe { city in
+            self.setupScreen(model: city.element!)
+        }
+    }
+    
+    func detailCity(city: String) {
+        self.network.performRequestCoordinates(city: city, varinant: 1)
     }
     
     func setupScreen(model: CurrentWeatherModel) {
-        detailsView.isHiddenView(isHidden: false)
-        detailsView.updateView(model: model)
+        DispatchQueue.main.async {
+            self.detailsView.isHiddenView(isHidden: false)
+            self.detailsView.updateView(model: model)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,13 +53,4 @@ class DetailsViewController: UIViewController, UpdateDetailsProtocol {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-}
-
-extension DetailsViewController: NetworkWetherDelegate {
-    func updateInterface(_: NetworkWether, with currentWeather: CurrentWeatherModel) {
-        DispatchQueue.main.async {
-            self.detailsView.isHiddenView(isHidden: false)
-            self.detailsView.updateView(model: currentWeather)
-        }
-    }
 }

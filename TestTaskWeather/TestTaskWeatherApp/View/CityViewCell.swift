@@ -77,6 +77,5 @@ class CityViewCell: UICollectionViewCell {
         nameCity.text = model.nameCity
         tempInCity.text = "\(model.temperature) C°"
         weatherImage.image = UIImage(systemName: model.iconCode)
-//        backgroundColor = #colorLiteral(red: 0.5748289227, green: 0.5990194678, blue: 1, alpha: 1)
     }
 }
